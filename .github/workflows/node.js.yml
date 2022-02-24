@@ -23,8 +23,8 @@ jobs:
       with:
         node-version: '14'
 
-    - name: 'packages'
-      run: yarn && yarn build
+    - name: 'install deps'
+      run: yarn && yarn lint
 
     - name: 'test'  
       run: yarn test
