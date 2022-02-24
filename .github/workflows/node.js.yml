@@ -12,18 +12,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master
+      uses: actions/checkout@v2
+      with:
+        ref: master
 
-  steps:
-  - name: Checkout master
-    uses: actions/checkout@v2
-    with:
-      ref: master
-
-  steps:
-  - name: 'initialize node'
-    uses: actions/setup-node@v2
-    with:
-      node-version: '14'
-    run: yarn
-    run: yarn build
-    run: yarn test
+    steps:
+    - name: 'initialize node'
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+      run: yarn
+      run: yarn build
+      run: yarn test
